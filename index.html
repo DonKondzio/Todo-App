@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="dist/img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="dist/css/style.min.css" />
+    <script src="dist/js/app.min.js" defer></script>
+  </head>
+  <body class="dark">
+    <!-- <img src="dist/img/bg-mobile-dark.jpg" alt="" class="bg-photo" />
+    <div class="bg-plain"></div> -->
+
+    <div class="wrapper">
+      <div class="upper-container">
+        <h1 class="heading">todo</h1>
+        <button class="theme-toggle">
+          <img
+            class="active theme-toggle-img theme-toggle-img--sun"
+            src="dist/img/icon-sun.svg"
+            alt="sun"
+          />
+          <img
+            class="theme-toggle-img theme-toggle-img--moon"
+            src="dist/img/icon-moon.svg"
+            alt="moon"
+          />
+        </button>
+      </div>
+
+      <div class="create-container">
+        <div class="circle"></div>
+        <input
+          class="create-input"
+          type="text"
+          placeholder="Create a new todo..."
+        />
+      </div>
+
+      <div class="todo-items-container">
+        <!-- <div class="todo-item completed">
+          <div class="todo-item-left">
+            <button class="todo-item-circle">
+              <img
+                src="dist/img/icon-check.svg"
+                alt="checkmark"
+                class="todo-item-circle-check"
+              />
+            </button>
+            <p class="todo-item-text">Complete online Javascript course</p>
+          </div>
+          <button class="todo-item-close">
+            <img
+              class="todo-item-close-img"
+              src="dist/img/icon-cross.svg"
+              alt="cross"
+            />
+          </button>
+        </div> 
+
+         <div class="todo-item">
+          <div class="todo-item-left">
+            <button class="todo-item-circle">
+              <img
+                src="dist/img/icon-check.svg"
+                alt="checkmark"
+                class="todo-item-circle-check"
+              />
+              <div class="todo-item-circle-gradient"></div>
+            </button>
+            <p class="todo-item-text">Jog around the park 3x</p>
+          </div>
+          <button class="todo-item-close">
+            <img
+              class="todo-item-close-img"
+              src="dist/img/icon-cross.svg"
+              alt="cross"
+            />
+          </button>
+        </div>
+
+        <div class="todo-item">
+          <div class="todo-item-left">
+            <button class="todo-item-circle">
+              <img
+                src="dist/img/icon-check.svg"
+                alt="checkmark"
+                class="todo-item-circle-check"
+              />
+            </button>
+            <p class="todo-item-text">10 minutes meditation</p>
+          </div>
+          <button class="todo-item-close">
+            <img
+              class="todo-item-close-img"
+              src="dist/img/icon-cross.svg"
+              alt="cross"
+            />
+          </button>
+        </div>
+
+        <div class="todo-item">
+          <div class="todo-item-left">
+            <button class="todo-item-circle">
+              <img
+                src="dist/img/icon-check.svg"
+                alt="checkmark"
+                class="todo-item-circle-check"
+              />
+            </button>
+            <p class="todo-item-text">Read for 1 hour</p>
+          </div>
+          <button class="todo-item-close">
+            <img
+              class="todo-item-close-img"
+              src="dist/img/icon-cross.svg"
+              alt="cross"
+            />
+          </button>
+        </div>
+
+        <div class="todo-item">
+          <div class="todo-item-left">
+            <button class="todo-item-circle">
+              <img
+                src="dist/img/icon-check.svg"
+                alt="checkmark"
+                class="todo-item-circle-check"
+              />
+            </button>
+            <p class="todo-item-text">Pick up groceries</p>
+          </div>
+          <button class="todo-item-close">
+            <img
+              class="todo-item-close-img"
+              src="dist/img/icon-cross.svg"
+              alt="cross"
+            />
+          </button>
+        </div>
+
+        <div class="todo-item">
+          <div class="todo-item-left">
+            <button class="todo-item-circle">
+              <img
+                src="dist/img/icon-check.svg"
+                alt="checkmark"
+                class="todo-item-circle-check"
+              />
+            </button>
+            <p class="todo-item-text">Complete Todo App on Frontend Mentor</p>
+          </div>
+          <button class="todo-item-close">
+            <img
+              class="todo-item-close-img"
+              src="dist/img/icon-cross.svg"
+              alt="cross"
+            />
+          </button>
+        </div> 
+      -->
+
+        <div class="todo-bottom">
+          <p class="todo-bottom-left">
+            <span class="todo-bottom-left-number">5</span> items left
+          </p>
+          <div class="todo-bottom-filter-options-desktop">
+            <button class="active filter-btn filter-btn--all">All</button>
+            <button class="filter-btn filter-btn--active">Active</button>
+            <button class="filter-btn filter-btn--completed">Completed</button>
+          </div>
+          <button class="todo-bottom-clear">Clear Completed</button>
+        </div>
+      </div>
+
+      <div class="active filter-options-mobile">
+        <button class="active filter-btn filter-btn--all">All</button>
+        <button class="filter-btn filter-btn--active">Active</button>
+        <button class="filter-btn filter-btn--completed">Completed</button>
+      </div>
+
+      <p class="drag-info">Drag and drop to reorder list</p>
+    </div>
+  </body>
+</html>
