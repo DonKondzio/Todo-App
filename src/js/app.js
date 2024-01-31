@@ -39,6 +39,7 @@ class ThemeToggler {
 class TodoApp {
   todoItems = [];
   currentId = 0;
+  draggedItem;
   constructor() {
     const themeToggler = new ThemeToggler();
     createInput.addEventListener("keyup", this.addTodoItem.bind(this));
@@ -47,6 +48,9 @@ class TodoApp {
     // );
     todoItemsContainer.addEventListener("click", this.markItem);
     todoItemsContainer.addEventListener("click", this.removeItem.bind(this));
+    todoItemsContainer.addEventListener("dragstart", this.dragInit.bind(this));
+    todoItemsContainer.addEventListener("dragover", this.dragOver.bind(this));
+    todoItemsContainer.addEventListener("dragend", this.dragEnd.bind(this));
     showAllBtns.forEach((btn) =>
       btn.addEventListener("click", this.showAll.bind(this))
     );
@@ -66,7 +70,7 @@ class TodoApp {
     createInput.value = "";
 
     const html = `
-    <div data-id="${this.currentId}" class="todo-item">
+    <div data-id="${this.currentId}" class="todo-item" draggable="true">
     <div class="todo-item-left">
     <button class="todo-item-circle">
             <img
@@ -148,6 +152,34 @@ class TodoApp {
       (item) => !item.classList.contains("completed")
     );
     this.renderView();
+  }
+
+  dragInit(e) {
+    this.draggedItem = e.target.closest(".todo-item");
+    this.draggedItem.classList.add("dragging");
+  }
+
+  dragOver(e) {
+    // Allow dragging only if the target is a todo-item
+    const todoItem = e.target.closest(".todo-item");
+    if (!todoItem) return;
+
+    const todoItemRect = todoItem.getBoundingClientRect(); // item rect info
+
+    const offset = e.clientY - todoItemRect.top; // distance between cursor and top of todo item
+    const threshold = todoItemRect.height / 2; // half of item height
+
+    if (offset > threshold) {
+      todoItemsContainer.insertBefore(
+        this.draggedItem,
+        todoItem.nextElementSibling
+      );
+    } else todoItemsContainer.insertBefore(this.draggedItem, todoItem);
+  }
+
+  dragEnd(e) {
+    this.draggedItem.classList.remove("dragging");
+    this.draggedItem = "";
   }
 }
 

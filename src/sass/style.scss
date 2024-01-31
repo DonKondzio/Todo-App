@@ -44,6 +44,7 @@ body {
   background-image: url("../../dist/img/bg-mobile-dark.jpg");
   background-repeat: no-repeat;
   background-color: var(--main-background);
+  transition: background-image 0.2s, background-color 0.2s;
   &.light {
     background-image: url("../../dist/img/bg-mobile-light.jpg");
   }
@@ -132,6 +133,7 @@ body {
   margin-top: 1.5rem;
   border-radius: 0.5rem;
   overflow: hidden;
+
   .todo-item {
     display: flex;
     justify-content: space-between;
